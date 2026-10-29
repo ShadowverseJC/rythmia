@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. Rhythmia is dark-only. -->
+    <style name="Base.Theme.Rythemia" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorOnPrimary">@color/accent_on_primary</item>
+        <item name="colorSecondary">@color/accent_secondary</item>
+        <item name="colorOnSecondary">@color/accent_on_secondary</item>
+        <item name="colorSurface">@color/bg_surface</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorControlHighlight">@color/ripple</item>
+        <item name="android:colorBackground">@color/bg_canvas</item>
+        <item name="android:windowBackground">@color/bg_canvas</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_subtle</item>
+    </style>
+
+    <style name="Theme.Rythemia" parent="Base.Theme.Rythemia" />
+</resources>

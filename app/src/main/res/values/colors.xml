@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Design tokens from the Rhythmia Figma file -->
+    <color name="bg_canvas">#110E1A</color>
+    <color name="bg_header">#15121F</color>
+    <color name="bg_surface">#1B1727</color>
+    <color name="bg_raised">#262136</color>
+    <color name="bg_sunken">#14101F</color>
+
+    <color name="border_default">#2E2840</color>
+    <color name="border_strong">#3A3350</color>
+    <color name="border_control">#4A4260</color>
+
+    <color name="text_primary">#F6EEFF</color>
+    <color name="text_secondary">#CFC6E6</color>
+    <color name="text_muted">#ABA2C2</color>
+    <color name="text_subtle">#8C83A6</color>
+
+    <color name="accent_primary">#FF3D9A</color>
+    <color name="accent_primary_soft">#2B1830</color>
+    <color name="accent_primary_text">#FF8CC3</color>
+    <color name="accent_on_primary">#1A0710</color>
+    <color name="accent_secondary">#2DD4EE</color>
+    <color name="accent_secondary_soft">#0F2A30</color>
+    <color name="accent_on_secondary">#061A1F</color>
+    <color name="accent_violet_soft">#2A2340</color>
+    <color name="accent_violet_text">#C4B2FF</color>
+
+    <color name="tag_bg">#EADCFF</color>
+    <color name="tag_text">#2A1A45</color>
+
+    <color name="star_gold">#F5C542</color>
+    <color name="star_gold_soft">#2E2814</color>
+    <color name="grade_track">#2F2942</color>
+
+    <color name="staff_line">#3A3350</color>
+    <color name="staff_line_strong">#6E6589</color>
+    <color name="staff_stem">#CFC6E6</color>
+    <color name="staff_bar">#5A5175</color>
+
+    <color name="feedback_hit">#4BE3A0</color>
+    <color name="feedback_on_hit">#08261A</color>
+    <color name="feedback_miss">#FF6B7A</color>
+    <color name="feedback_miss_text">#FF8C97</color>
+
+    <color name="danger_border">#5A2A3E</color>
+    <color name="danger_text">#FF8CA8</color>
+
+    <color name="ripple">#26FFFFFF</color>
+</resources>
