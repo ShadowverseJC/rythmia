@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generic placeholder profile picture -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="104dp"
+    android:height="104dp"
+    android:viewportWidth="104"
+    android:viewportHeight="104">
+    <path
+        android:pathData="M0,0h104v104h-104Z"
+        android:fillColor="#262136" />
+    <path
+        android:pathData="M52,26a18,18 0,1 0,0.01 0Z"
+        android:fillColor="#8C83A6" />
+    <path
+        android:pathData="M16,104C16,82 32,68 52,68C72,68 88,82 88,104Z"
+        android:fillColor="#8C83A6" />
+</vector>

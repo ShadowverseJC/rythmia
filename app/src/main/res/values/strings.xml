@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Rythemia</string>
+    <string name="wordmark">Rhythmia</string>
+
+    <!-- Placeholder account (no backend yet) -->
+    <string name="placeholder_username">user</string>
+    <string name="placeholder_email">user@example.com</string>
+    <string name="placeholder_password_mask">••••••••••••</string>
+
+    <!-- Auth -->
+    <string name="login_title">Welcome back</string>
+    <string name="login_subtitle">Sign in to keep practicing.</string>
+    <string name="login_button">Log in</string>
+    <string name="login_footer_prompt">New to Rhythmia?</string>
+    <string name="login_footer_link">Create an account</string>
+    <string name="register_title">Create account</string>
+    <string name="register_subtitle">Pick a stage name and start your first lesson.</string>
+    <string name="register_button">Create account</string>
+    <string name="register_footer_prompt">Already have an account?</string>
+    <string name="register_footer_link">Log in</string>
+    <string name="field_username">Username</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+    <string name="hint_username">Enter username</string>
+    <string name="hint_email">you@example.com</string>
+    <string name="hint_password">Enter password</string>
+    <string name="hint_create_password">Create a password</string>
+    <string name="show_password">Show password</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_greeting">Welcome, %1$s!</string>
+    <string name="dashboard_subtitle">Pick a lesson and lock in your timing.</string>
+    <string name="rank">Rank</string>
+    <string name="rank_value">Beginner-Intermediate</string>
+    <!-- Zero-width space lets narrow tiles wrap after the hyphen instead of mid-word -->
+    <string name="rank_value_wrapping">Beginner-​Intermediate</string>
+    <string name="stars_earned">Stars earned</string>
+    <string name="stars_value">6</string>
+    <string name="stars_total">" / 27"</string>
+    <string name="tier_bronze_count">Bronze · 1</string>
+    <string name="tier_silver_count">Silver · 2</string>
+    <string name="tier_gold_count">Gold · 3</string>
+    <string name="rhythm_tracks">Rhythm tracks</string>
+    <string name="track_beginner">Beginner Rhythm</string>
+    <string name="track_intermediate">Intermediate Rhythm</string>
+    <string name="track_advanced">Advanced Rhythm</string>
+    <string name="track_beginner_meta">3 lessons · 6 / 9 stars</string>
+    <string name="track_locked_meta">3 lessons · 0 / 9 stars</string>
+    <string name="lesson_quarter">Quarter Notes</string>
+    <string name="lesson_eighth">Eighth Notes</string>
+    <string name="lesson_sixteenth">Sixteenth Notes</string>
+    <string name="lesson_quarter_summary">One steady note on every beat</string>
+    <string name="lesson_eighth_summary">Even pairs of 2 notes per beat</string>
+    <string name="lesson_sixteenth_summary">Continuous bars of 4 notes per beat</string>
+    <string name="tier_bronze">Bronze</string>
+    <string name="tier_silver">Silver</string>
+    <string name="tier_gold">Gold</string>
+    <string name="technique_downstrokes">Downstrokes</string>
+    <string name="technique_alternate_picking">Alternate picking</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="play">Play</string>
+    <string name="profile">Profile</string>
+
+    <!-- Exercise intro -->
+    <string name="exercise_meta">4/4 · 1 bar · 16 notes</string>
+    <string name="your_best">"Your best: "</string>
+    <string name="tab">Tab</string>
+    <string name="downstroke">Downstroke</string>
+    <string name="upstroke">Upstroke</string>
+    <string name="exercise_description">Continuous bars of 4 notes per beat. Pick the open low E with strict down-up strokes and count out loud: 1 e &amp; a, 2 e &amp; a…</string>
+    <string name="tempo">Tempo</string>
+    <string name="top_speed_label">Top speed: 120 BPM</string>
+    <string name="bpm_value">120</string>
+    <string name="bpm">BPM</string>
+    <string name="tempo_marking">Allegro</string>
+    <string name="slower">Slower (−5 BPM)</string>
+    <string name="faster">Faster (+5 BPM)</string>
+    <string name="home">Home</string>
+
+    <!-- Score report -->
+    <string name="score_report">Score report</string>
+    <string name="tempo_chip">120 BPM</string>
+    <string name="grade">B</string>
+    <string name="accuracy">75%</string>
+    <string name="notes_correct_value">12</string>
+    <string name="notes_correct_total">" / 16"</string>
+    <string name="notes_correct">Notes correct</string>
+    <string name="silver_star">Silver star</string>
+    <string name="stars_for_lesson">2 of 3 stars for this lesson</string>
+    <string name="note_breakdown">Note breakdown</string>
+    <string name="hit">Hit</string>
+    <string name="missed">Missed</string>
+    <string name="hit_count">12</string>
+    <string name="missed_count">4</string>
+    <string name="insight"><![CDATA[Your misses landed on the <b>e and &amp; of beat 2</b> and the <b>&amp; and a of beat 4</b>. Try a few runs at 110 BPM, then build back up to 120.]]></string>
+    <string name="retry">Retry</string>
+
+    <!-- Profile -->
+    <string name="back_practice">Practice</string>
+    <string name="your_profile">Your profile</string>
+    <string name="six_stars">6 stars</string>
+    <string name="stats">Stats</string>
+    <string name="stars">Stars</string>
+    <string name="stars_fraction">6 / 27</string>
+    <string name="top_speed">Top speed</string>
+    <string name="top_speed_value">120 BPM</string>
+    <string name="strength">Strength</string>
+    <string name="strength_value">Downpicking</string>
+    <string name="account">Account</string>
+    <string name="edit">Edit</string>
+    <string name="reset">Reset</string>
+    <string name="log_out">Log out</string>
+    <string name="change_photo">Change photo</string>
+</resources>

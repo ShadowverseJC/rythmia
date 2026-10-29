@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TabStaffView">
+        <!-- intro shows pick directions; result colors each note as hit or missed -->
+        <attr name="staffMode" format="enum">
+            <enum name="intro" value="0" />
+            <enum name="result" value="1" />
+        </attr>
+        <!-- Comma-separated 0-based note indices (0..15) that were missed, result mode only -->
+        <attr name="missedNotes" format="string" />
+    </declare-styleable>
+</resources>

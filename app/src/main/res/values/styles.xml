@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Type scale (Figma text styles) -->
+    <style name="Text">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Text.Wordmark">
+        <item name="android:fontFamily">@font/sora_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="Text.Wordmark.Large">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Text.Display">
+        <item name="android:fontFamily">@font/sora_semibold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">-0.025</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="Text.TitleLarge">
+        <item name="android:fontFamily">@font/geist_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.015</item>
+    </style>
+
+    <style name="Text.TitleMedium">
+        <item name="android:fontFamily">@font/geist_semibold</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="Text.Body">
+        <item name="android:fontFamily">@font/geist_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="Text.BodySmall">
+        <item name="android:fontFamily">@font/geist_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <style name="Text.Label">
+        <item name="android:fontFamily">@font/geist_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="Text.LabelSmall">
+        <item name="android:fontFamily">@font/geist_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+    </style>
+
+    <style name="Text.Overline">
+        <item name="android:fontFamily">@font/geist_semibold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.StatTile">
+        <item name="android:fontFamily">@font/sora_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+    </style>
+
+    <style name="Text.StatValue">
+        <item name="android:fontFamily">@font/sora_semibold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">-0.025</item>
+    </style>
+
+    <style name="ShapeAppearance.Rhythmia.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Chips -->
+    <style name="Chip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Chip.Tag">
+        <item name="android:background">@drawable/bg_chip_tag</item>
+        <item name="android:fontFamily">@font/geist_semibold</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/tag_text</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Chip.Neutral">
+        <item name="android:background">@drawable/bg_chip_neutral</item>
+        <item name="android:fontFamily">@font/geist_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+    <style name="Chip.Rank">
+        <item name="android:background">@drawable/bg_chip_rank</item>
+        <item name="android:fontFamily">@font/geist_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/accent_primary_text</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Chip.Stars" parent="Chip.Rank">
+        <item name="android:background">@drawable/bg_chip_stars</item>
+        <item name="android:textColor">@color/star_gold</item>
+    </style>
+
+    <!-- Text fields -->
+    <style name="Widget.Rhythmia.Input" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:fontFamily">@font/geist_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_subtle</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.Rhythmia.Button" parent="Widget.Material3.Button">
+        <item name="android:layout_height">54dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/geist_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.005</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="backgroundTint">@color/accent_primary</item>
+        <item name="android:textColor">@color/accent_on_primary</item>
+        <item name="iconTint">@color/accent_on_primary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconPadding">8dp</item>
+        <item name="rippleColor">@color/ripple</item>
+    </style>
+
+    <style name="Widget.Rhythmia.Button.Secondary">
+        <item name="backgroundTint">@color/accent_secondary</item>
+        <item name="android:textColor">@color/accent_on_secondary</item>
+        <item name="iconTint">@color/accent_on_secondary</item>
+    </style>
+
+    <style name="Widget.Rhythmia.Button.Outline">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/accent_secondary</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/accent_secondary</item>
+        <item name="iconTint">@color/accent_secondary</item>
+    </style>
+
+    <style name="Widget.Rhythmia.Button.Danger">
+        <item name="android:layout_height">50dp</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/danger_border</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/danger_text</item>
+        <item name="iconTint">@color/danger_text</item>
+    </style>
+
+    <style name="Widget.Rhythmia.Button.Small">
+        <item name="android:layout_width">78dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="backgroundTint">@color/bg_raised</item>
+        <item name="strokeColor">@color/border_control</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+</resources>

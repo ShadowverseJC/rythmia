@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_canvas"
+    android:orientation="vertical"
+    tools:context=".ExerciseIntroFragment">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/view_app_bar_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
+
+            <!-- Title -->
+            <TextView
+                style="@style/Text.Display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lesson_sixteenth" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Chip.Tag"
+                    android:text="@string/technique_alternate_picking" />
+
+                <TextView
+                    style="@style/Chip.Neutral"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/exercise_meta" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_star_bronze" />
+
+                <TextView
+                    style="@style/Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/your_best"
+                    android:textColor="@color/text_muted" />
+
+                <TextView
+                    style="@style/Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tier_bronze"
+                    android:textColor="@color/text_primary" />
+            </LinearLayout>
+
+            <!-- Tab card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.TitleMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tab" />
+
+                    <TextView
+                        style="@style/Text.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/downstroke"
+                        app:drawableStartCompat="@drawable/ic_pick_down" />
+
+                    <TextView
+                        style="@style/Text.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/upstroke"
+                        app:drawableStartCompat="@drawable/ic_pick_up" />
+                </LinearLayout>
+
+                <com.example.rythemia.TabStaffView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_staff"
+                    android:paddingStart="13dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="15dp"
+                    app:staffMode="intro" />
+
+                <TextView
+                    style="@style/Text.BodySmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/exercise_description"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+
+            <!-- Tempo card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_card"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.TitleMedium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tempo" />
+
+                    <TextView
+                        style="@style/Text.LabelSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/top_speed_label" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_step_button"
+                        android:contentDescription="@string/slower"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_minus" />
+
+                    <LinearLayout
+                        android:layout_width="124dp"
+                        android:layout_height="124dp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginEnd="22dp"
+                        android:background="@drawable/bg_bpm_ring"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingTop="6dp">
+
+                        <TextView
+                            style="@style/Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sora_semibold"
+                            android:letterSpacing="-0.03"
+                            android:text="@string/bpm_value"
+                            android:textSize="40sp" />
+
+                        <TextView
+                            style="@style/Text.Overline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bpm" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_step_button"
+                        android:contentDescription="@string/faster"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_plus" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/sora_semibold"
+                    android:text="@string/tempo_marking"
+                    android:textColor="@color/accent_primary_text"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="78dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="18dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/beat_dots" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Action bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_action_bar"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/home_button"
+            style="@style/Widget.Rhythmia.Button.Outline"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/home"
+            app:icon="@drawable/ic_home" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/play_button"
+            style="@style/Widget.Rhythmia.Button"
+            android:layout_width="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:text="@string/play"
+            app:icon="@drawable/ic_play" />
+    </LinearLayout>
+</LinearLayout>
