@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tall enough for the landscape sign-in / sign-up design sizes -->
+    <dimen name="auth_card_padding_vertical">18dp</dimen>
+    <dimen name="auth_field_gap">12dp</dimen>
+    <dimen name="auth_input_height">56dp</dimen>
+    <dimen name="auth_button_height">46dp</dimen>
+    <dimen name="auth_footer_gap">8dp</dimen>
+</resources>

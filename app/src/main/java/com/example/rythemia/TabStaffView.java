@@ -20,12 +20,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * One bar of sixteenth notes on the open low E, drawn as two tab systems (beats 1–2 and 3–4).
+ * One bar of sixteenth notes on the open low E. By default it is drawn as two stacked tab
+ * systems (beats 1–2 and 3–4); with {@code staffLayout="singleRow"} all four beats share one
+ * staff, scaled down uniformly when the view is narrower than the staff's natural width.
  * Measurements mirror the "Tab Staff" component in the Figma file.
  */
 public class TabStaffView extends View {
 
     private static final int MODE_INTRO = 0;
+    private static final int LAYOUT_SINGLE_ROW = 1;
     private static final String[] STRING_NAMES = {"e", "B", "G", "D", "A"};
     private static final String[] COUNTS = {"", "e", "&", "a"};
 
@@ -38,8 +41,16 @@ public class TabStaffView extends View {
     private static final float SYSTEM_GAP = 18f;
     private static final float NAMES_WIDTH = 20f; // 12dp column + 8dp gap
 
+    // Horizontal metrics in dp
+    private static final float BEAT_INSET = 8f; // staff edge to the nearest beat
+    private static final float BEAT_GAP = 14f;
+    private static final float BEAT_WIDTH = 122f; // single-row beats at full size
+    private static final float SINGLE_ROW_WIDTH =
+            NAMES_WIDTH + 2 * (BEAT_INSET * 2 + BEAT_WIDTH * 2 + BEAT_GAP);
+
     private final float density;
     private final boolean intro;
+    private final boolean singleRow;
     private final Set<Integer> missed = new HashSet<>();
 
     private final Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -57,6 +68,7 @@ public class TabStaffView extends View {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TabStaffView);
         intro = a.getInt(R.styleable.TabStaffView_staffMode, MODE_INTRO) == MODE_INTRO;
+        singleRow = a.getInt(R.styleable.TabStaffView_staffLayout, 0) == LAYOUT_SINGLE_ROW;
         String missedAttr = a.getString(R.styleable.TabStaffView_missedNotes);
         a.recycle();
         if (missedAttr != null) {
@@ -86,27 +98,66 @@ public class TabStaffView extends View {
         return dp((intro ? PICK_ROW : 0) + STRING_ROW * 5 + NOTE_ROW + 2 + BEAM_ROW + 6 + COUNT_ROW);
     }
 
+    /** Height of the drawn staff at full size. */
+    private float staffHeight() {
+        return singleRow ? systemHeight() : systemHeight() * 2 + dp(SYSTEM_GAP);
+    }
+
+    /** A single-row staff shrinks uniformly when narrower than its natural width. */
+    private float scale(float contentWidth) {
+        if (!singleRow) {
+            return 1f;
+        }
+        return Math.max(0f, Math.min(1f, contentWidth / dp(SINGLE_ROW_WIDTH)));
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = (int) Math.ceil(getPaddingTop() + getPaddingBottom()
-                + systemHeight() * 2 + dp(SYSTEM_GAP));
+        float scale = scale(width - getPaddingLeft() - getPaddingRight());
+        int height = (int) Math.ceil(getPaddingTop() + getPaddingBottom() + staffHeight() * scale);
         setMeasuredDimension(width, resolveSize(height, heightMeasureSpec));
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float top = getPaddingTop();
-        drawSystem(canvas, top, 0, false);
-        drawSystem(canvas, top + systemHeight() + dp(SYSTEM_GAP), 2, true);
+        float contentW = getWidth() - getPaddingLeft() - getPaddingRight();
+        float contentH = getHeight() - getPaddingTop() - getPaddingBottom();
+        float scale = scale(contentW);
+        if (scale <= 0f) {
+            return;
+        }
+
+        // Draw at full size in a scaled canvas, centered vertically if the view is taller
+        canvas.save();
+        canvas.translate(getPaddingLeft(),
+                getPaddingTop() + Math.max(0f, (contentH - staffHeight() * scale) / 2f));
+        canvas.scale(scale, scale);
+        float width = contentW / scale;
+        if (singleRow) {
+            // Beats 1–2 open the staff with the string names; beats 3–4 continue the same
+            // strings and close the bar.
+            float half = (width - dp(NAMES_WIDTH)) / 2f;
+            drawSystem(canvas, 0, 0, dp(NAMES_WIDTH) + half, 0, true, false);
+            drawSystem(canvas, dp(NAMES_WIDTH) + half, 0, half, 2, false, true);
+        } else {
+            drawSystem(canvas, 0, 0, width, 0, true, false);
+            drawSystem(canvas, 0, systemHeight() + dp(SYSTEM_GAP), width, 2, true, true);
+        }
+        canvas.restore();
     }
 
-    private void drawSystem(Canvas canvas, float y0, int firstBeat, boolean last) {
-        float left = getPaddingLeft();
-        float staffX = left + dp(NAMES_WIDTH);
-        float staffW = getWidth() - getPaddingRight() - staffX;
-        float beatW = (staffW - dp(8) * 2 - dp(14)) / 2f;
+    /**
+     * Draws beats {@code firstBeat} and {@code firstBeat + 1} in the box at (left, y0) that is
+     * {@code width} wide. An opening system starts with the string names and a bar line; the
+     * last one ends with a bar line.
+     */
+    private void drawSystem(Canvas canvas, float left, float y0, float width, int firstBeat,
+                            boolean opening, boolean last) {
+        float staffX = opening ? left + dp(NAMES_WIDTH) : left;
+        float staffW = left + width - staffX;
+        float beatW = (staffW - dp(BEAT_INSET) * 2 - dp(BEAT_GAP)) / 2f;
         float cellW = beatW / 4f;
 
         float stringsTop = y0 + dp(intro ? PICK_ROW : 0);
@@ -119,11 +170,15 @@ public class TabStaffView extends View {
         text.setTextSize(dp(11));
         for (int s = 0; s < STRING_NAMES.length; s++) {
             float cy = stringsTop + dp(STRING_ROW * s + STRING_ROW / 2);
-            drawText(canvas, STRING_NAMES[s], left + dp(6), cy, monoMedium, R.color.text_subtle);
+            if (opening) {
+                drawText(canvas, STRING_NAMES[s], left + dp(6), cy, monoMedium, R.color.text_subtle);
+            }
             fill.setColor(color(R.color.staff_line));
             canvas.drawRect(staffX, cy - dp(0.5f), staffX + staffW, cy + dp(0.5f), fill);
         }
-        drawText(canvas, "E", left + dp(6), noteCenter, monoBold, R.color.text_primary);
+        if (opening) {
+            drawText(canvas, "E", left + dp(6), noteCenter, monoBold, R.color.text_primary);
+        }
         fill.setColor(color(R.color.staff_line_strong));
         canvas.drawRect(staffX, noteCenter - dp(0.75f), staffX + staffW, noteCenter + dp(0.75f), fill);
 
@@ -131,14 +186,16 @@ public class TabStaffView extends View {
         float barTop = stringsTop + dp(STRING_ROW / 2 - 0.5f);
         float barBottom = barTop + dp(69.25f);
         fill.setColor(color(R.color.staff_bar));
-        canvas.drawRect(staffX, barTop, staffX + dp(1.5f), barBottom, fill);
+        if (opening) {
+            canvas.drawRect(staffX, barTop, staffX + dp(1.5f), barBottom, fill);
+        }
         if (last) {
             canvas.drawRect(staffX + staffW - dp(1.5f), barTop, staffX + staffW, barBottom, fill);
         }
 
         for (int b = 0; b < 2; b++) {
             int beat = firstBeat + b;
-            float beatX = staffX + dp(8) + b * (beatW + dp(14));
+            float beatX = staffX + dp(BEAT_INSET) + b * (beatW + dp(BEAT_GAP));
 
             for (int c = 0; c < 4; c++) {
                 int note = beat * 4 + c;

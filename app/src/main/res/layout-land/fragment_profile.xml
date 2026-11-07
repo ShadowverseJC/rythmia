@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Landscape: identity card with Log out on the start side; stats and account details in the
+     rest. The page scrolls on screens too short to fit it, and the stat tiles scroll sideways
+     on screens too narrow for all four. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_canvas"
+    android:orientation="vertical"
+    tools:context=".ProfileFragment">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/view_app_bar_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="14dp">
+
+            <!-- Identity -->
+            <LinearLayout
+                android:layout_width="254dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_tile"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <FrameLayout
+                    android:layout_width="91.84dp"
+                    android:layout_height="91.84dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="85.28dp"
+                        android:layout_height="85.28dp"
+                        android:layout_margin="3.28dp"
+                        android:importantForAccessibility="no"
+                        android:padding="1.23dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_avatar_default"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Rhythmia.Circle"
+                        app:strokeColor="@color/accent_primary"
+                        app:strokeWidth="2.46dp" />
+
+                    <ImageView
+                        android:layout_width="32.8dp"
+                        android:layout_height="32.8dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="-1.64dp"
+                        android:layout_marginBottom="-1.64dp"
+                        android:background="@drawable/bg_change_photo_small"
+                        android:contentDescription="@string/change_photo"
+                        android:padding="9.02dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_edit" />
+                </FrameLayout>
+
+                <TextView
+                    style="@style/Text.Overline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/your_profile" />
+
+                <TextView
+                    android:id="@+id/display_name"
+                    style="@style/Text.Display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center" />
+
+                <TextView
+                    style="@style/Chip.Rank"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/rank_value"
+                    app:drawableStartCompat="@drawable/ic_medal_chip" />
+
+                <TextView
+                    style="@style/Chip.Stars"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/six_stars"
+                    app:drawableStartCompat="@drawable/ic_star_chip" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/logout_button"
+                    style="@style/Widget.Rhythmia.Button.Danger"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="1dp"
+                    android:text="@string/log_out"
+                    app:icon="@drawable/ic_logout" />
+            </LinearLayout>
+
+            <!-- Stats and account -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Text.TitleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stats" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:fadingEdgeLength="24dp"
+                    android:requiresFadingEdge="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
+
+                        <include
+                            android:id="@+id/stat_rank"
+                            layout="@layout/view_stat_tile"
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent" />
+
+                        <include
+                            android:id="@+id/stat_stars"
+                            layout="@layout/view_stat_tile"
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp" />
+
+                        <include
+                            android:id="@+id/stat_speed"
+                            layout="@layout/view_stat_tile"
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp" />
+
+                        <include
+                            android:id="@+id/stat_strength"
+                            layout="@layout/view_stat_tile"
+                            android:layout_width="130dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="6dp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="14dp" />
+
+                <!-- Account -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/Text.TitleLarge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/account" />
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_up" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/bg_tile_small"
+                    android:orientation="vertical"
+                    android:padding="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="13dp">
+
+                        <TextView
+                            style="@style/Text.LabelSmall"
+                            android:layout_width="78dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_username" />
+
+                        <TextView
+                            style="@style/Text.Body"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/placeholder_username"
+                            android:textColor="@color/text_primary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.Rhythmia.Button.Small"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/edit" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/border_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="13dp">
+
+                        <TextView
+                            style="@style/Text.LabelSmall"
+                            android:layout_width="78dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_email" />
+
+                        <TextView
+                            style="@style/Text.Body"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:singleLine="true"
+                            android:text="@string/placeholder_email"
+                            android:textColor="@color/text_primary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.Rhythmia.Button.Small"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/edit" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/border_default" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="13dp"
+                        android:paddingEnd="13dp">
+
+                        <TextView
+                            style="@style/Text.LabelSmall"
+                            android:layout_width="78dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_password" />
+
+                        <TextView
+                            style="@style/Text.Body"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:letterSpacing="0.15"
+                            android:singleLine="true"
+                            android:text="@string/placeholder_password_mask"
+                            android:textColor="@color/text_primary" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.Rhythmia.Button.Small"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="12dp"
+                            android:text="@string/reset" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

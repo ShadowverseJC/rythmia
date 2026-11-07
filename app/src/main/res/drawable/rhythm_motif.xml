@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma "Rhythm motif": a string with alternating downstroke (pink) and upstroke (cyan) notes -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="20dp"
+    android:viewportWidth="280"
+    android:viewportHeight="20">
+    <path
+        android:pathData="M0,9.5h280v1h-280Z"
+        android:fillColor="#6E6589" />
+    <path
+        android:pathData="M6,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M40.4,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M74.8,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M109.2,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M143.6,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M178,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M212.4,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M246.8,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z"
+        android:fillColor="#FF3D9A" />
+    <path
+        android:pathData="M23.2,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M57.6,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M92,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M126.4,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M160.8,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M195.2,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M229.6,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z
+            M264,10a5,5 0,1 0,10,0a5,5 0,1 0,-10,0Z"
+        android:fillColor="#2DD4EE" />
+</vector>

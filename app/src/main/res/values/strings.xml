@@ -8,6 +8,8 @@
     <string name="placeholder_password_mask">••••••••••••</string>
 
     <!-- Auth -->
+    <string name="login_tagline">Lock in your timing, one beat at a time.</string>
+    <string name="register_tagline">Start on quarter notes. Finish at full speed.</string>
     <string name="login_title">Welcome back</string>
     <string name="login_subtitle">Sign in to keep practicing.</string>
     <string name="login_button">Log in</string>
@@ -41,6 +43,7 @@
     <string name="tier_silver_count">Silver · 2</string>
     <string name="tier_gold_count">Gold · 3</string>
     <string name="rhythm_tracks">Rhythm tracks</string>
+    <string name="lessons">Lessons</string>
     <string name="track_beginner">Beginner Rhythm</string>
     <string name="track_intermediate">Intermediate Rhythm</string>
     <string name="track_advanced">Advanced Rhythm</string>
