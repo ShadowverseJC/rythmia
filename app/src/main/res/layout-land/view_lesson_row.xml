@@ -38,6 +38,7 @@
                 android:id="@+id/tier_star"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
+                android:layout_marginEnd="4dp"
                 android:importantForAccessibility="no" />
 
             <TextView
@@ -45,7 +46,6 @@
                 style="@style/Text.LabelSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
                 android:textColor="@color/text_secondary" />
         </LinearLayout>
     </LinearLayout>

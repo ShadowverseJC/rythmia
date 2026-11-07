@@ -85,15 +85,17 @@
                     android:gravity="center" />
 
                 <TextView
+                    android:id="@+id/rank_chip"
                     style="@style/Chip.Rank"
                     android:layout_marginTop="6dp"
-                    android:text="@string/rank_value"
+                    tools:text="Beginner-Intermediate"
                     app:drawableStartCompat="@drawable/ic_medal_chip" />
 
                 <TextView
+                    android:id="@+id/stars_chip"
                     style="@style/Chip.Stars"
                     android:layout_marginTop="4dp"
-                    android:text="@string/six_stars"
+                    tools:text="6 stars"
                     app:drawableStartCompat="@drawable/ic_star_chip" />
 
                 <Space
@@ -219,6 +221,7 @@
                             android:text="@string/field_username" />
 
                         <TextView
+                            android:id="@+id/account_username"
                             style="@style/Text.Body"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -226,7 +229,7 @@
                             android:layout_weight="1"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="@string/placeholder_username"
+                            tools:text="quack_sabbath"
                             android:textColor="@color/text_primary" />
 
                         <com.google.android.material.button.MaterialButton
@@ -256,6 +259,7 @@
                             android:text="@string/field_email" />
 
                         <TextView
+                            android:id="@+id/account_email"
                             style="@style/Text.Body"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -263,7 +267,7 @@
                             android:layout_weight="1"
                             android:ellipsize="end"
                             android:singleLine="true"
-                            android:text="@string/placeholder_email"
+                            tools:text="duck@rock.com"
                             android:textColor="@color/text_primary" />
 
                         <com.google.android.material.button.MaterialButton
@@ -300,7 +304,7 @@
                             android:layout_weight="1"
                             android:letterSpacing="0.15"
                             android:singleLine="true"
-                            android:text="@string/placeholder_password_mask"
+                            android:text="@string/password_mask"
                             android:textColor="@color/text_primary" />
 
                         <com.google.android.material.button.MaterialButton
