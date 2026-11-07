@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bg_change_photo at the 32.8dp landscape badge size -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/accent_secondary" />
+    <stroke
+        android:width="2.46dp"
+        android:color="@color/bg_canvas" />
+</shape>
