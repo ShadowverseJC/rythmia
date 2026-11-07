@@ -6,6 +6,9 @@
         <item name="colorSecondary">@color/accent_secondary</item>
         <item name="colorOnSecondary">@color/accent_on_secondary</item>
         <item name="colorSurface">@color/bg_surface</item>
+        <!-- Dialogs and other Material 3 containers -->
+        <item name="colorSurfaceContainerHigh">@color/bg_raised</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
         <item name="colorOnSurface">@color/text_primary</item>
         <item name="colorControlHighlight">@color/ripple</item>
         <item name="android:colorBackground">@color/bg_canvas</item>

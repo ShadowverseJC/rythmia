@@ -83,6 +83,10 @@
                 android:inputType="text" />
 
             <TextView
+                android:id="@+id/username_error"
+                style="@style/Text.FieldError" />
+
+            <TextView
                 style="@style/Text.Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -114,6 +118,10 @@
                     android:scaleType="center"
                     android:src="@drawable/ic_eye" />
             </FrameLayout>
+
+            <TextView
+                android:id="@+id/password_error"
+                style="@style/Text.FieldError" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/login_button"

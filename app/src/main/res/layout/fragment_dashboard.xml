@@ -82,11 +82,12 @@
                             android:text="@string/rank" />
 
                         <TextView
+                            android:id="@+id/rank_value"
                             style="@style/Text.TitleMedium"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/rank_value" />
+                            tools:text="Beginner-Intermediate" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -105,20 +106,22 @@
                         android:text="@string/stars_earned" />
 
                     <TextView
+                        android:id="@+id/stars_value"
                         style="@style/Text.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/stars_value" />
+                        tools:text="6" />
 
                     <TextView
+                        android:id="@+id/stars_total"
                         style="@style/Text.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/stars_total"
+                        tools:text=" / 27"
                         android:textColor="@color/text_muted" />
                 </LinearLayout>
 
-                <!-- 6 of 27 stars -->
+                <!-- Stars earned out of the total; the fill's weight is set from the data -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
@@ -128,10 +131,12 @@
                     android:weightSum="27">
 
                     <View
+                        android:id="@+id/stars_progress"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="6"
-                        android:background="@drawable/bg_progress_fill" />
+                        android:layout_weight="0"
+                        android:background="@drawable/bg_progress_fill"
+                        tools:layout_weight="6" />
                 </LinearLayout>
 
                 <View

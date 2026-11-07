@@ -2,10 +2,29 @@
     <string name="app_name">Rythemia</string>
     <string name="wordmark">Rhythmia</string>
 
-    <!-- Placeholder account (no backend yet) -->
-    <string name="placeholder_username">user</string>
-    <string name="placeholder_email">user@example.com</string>
-    <string name="placeholder_password_mask">••••••••••••</string>
+    <!-- Passwords are only stored as hashes, so the profile shows a fixed mask -->
+    <string name="password_mask">••••••••••••</string>
+    <!-- Shown for a stat with nothing to report yet -->
+    <string name="no_value">—</string>
+
+    <!-- Account checks and messages -->
+    <string name="error_username_empty">Enter a username</string>
+    <string name="error_username_format">Use 3–20 letters, numbers or underscores</string>
+    <string name="error_username_taken">That username is already taken</string>
+    <string name="error_email_empty">Enter your email</string>
+    <string name="error_email_format">Enter a valid email address</string>
+    <string name="error_email_taken">An account already uses this email</string>
+    <string name="error_password_empty">Enter a password</string>
+    <string name="error_password_short">Use at least %1$d characters</string>
+    <string name="error_password_required">Enter your password</string>
+    <string name="login_failed">Incorrect username or password</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_load_progress">Couldn\'t load your progress</string>
+    <string name="error_save_run">Couldn\'t save this run</string>
+    <string name="account_created">Account created</string>
+    <string name="logout_title">Log out?</string>
+    <string name="logout_message">You\'ll need your username and password to log back in.</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Auth -->
     <string name="login_tagline">Lock in your timing, one beat at a time.</string>
@@ -33,12 +52,15 @@
     <string name="dashboard_greeting">Welcome, %1$s!</string>
     <string name="dashboard_subtitle">Pick a lesson and lock in your timing.</string>
     <string name="rank">Rank</string>
-    <string name="rank_value">Beginner-Intermediate</string>
-    <!-- Zero-width space lets narrow tiles wrap after the hyphen instead of mid-word -->
-    <string name="rank_value_wrapping">Beginner-​Intermediate</string>
+    <!-- Ranks rise with total stars. The zero-width space after each hyphen lets narrow
+         tiles wrap there instead of mid-word. -->
+    <string name="rank_beginner">Beginner</string>
+    <string name="rank_beginner_intermediate">Beginner-​Intermediate</string>
+    <string name="rank_intermediate">Intermediate</string>
+    <string name="rank_intermediate_advanced">Intermediate-​Advanced</string>
+    <string name="rank_advanced">Advanced</string>
     <string name="stars_earned">Stars earned</string>
-    <string name="stars_value">6</string>
-    <string name="stars_total">" / 27"</string>
+    <string name="stars_total">" / %1$d"</string>
     <string name="tier_bronze_count">Bronze · 1</string>
     <string name="tier_silver_count">Silver · 2</string>
     <string name="tier_gold_count">Gold · 3</string>
@@ -47,14 +69,14 @@
     <string name="track_beginner">Beginner Rhythm</string>
     <string name="track_intermediate">Intermediate Rhythm</string>
     <string name="track_advanced">Advanced Rhythm</string>
-    <string name="track_beginner_meta">3 lessons · 6 / 9 stars</string>
-    <string name="track_locked_meta">3 lessons · 0 / 9 stars</string>
+    <string name="track_meta">%1$d lessons · %2$d / %3$d stars</string>
     <string name="lesson_quarter">Quarter Notes</string>
     <string name="lesson_eighth">Eighth Notes</string>
     <string name="lesson_sixteenth">Sixteenth Notes</string>
     <string name="lesson_quarter_summary">One steady note on every beat</string>
     <string name="lesson_eighth_summary">Even pairs of 2 notes per beat</string>
     <string name="lesson_sixteenth_summary">Continuous bars of 4 notes per beat</string>
+    <string name="tier_none">Not played</string>
     <string name="tier_bronze">Bronze</string>
     <string name="tier_silver">Silver</string>
     <string name="tier_gold">Gold</string>
@@ -72,17 +94,22 @@
     <string name="upstroke">Upstroke</string>
     <string name="exercise_description">Continuous bars of 4 notes per beat. Pick the open low E with strict down-up strokes and count out loud: 1 e &amp; a, 2 e &amp; a…</string>
     <string name="tempo">Tempo</string>
-    <string name="top_speed_label">Top speed: 120 BPM</string>
-    <string name="bpm_value">120</string>
+    <string name="top_speed_label">Top speed: %1$s</string>
     <string name="bpm">BPM</string>
-    <string name="tempo_marking">Allegro</string>
+    <string name="bpm_format">%1$d BPM</string>
+    <string name="tempo_largo">Largo</string>
+    <string name="tempo_adagio">Adagio</string>
+    <string name="tempo_andante">Andante</string>
+    <string name="tempo_moderato">Moderato</string>
+    <string name="tempo_allegro">Allegro</string>
+    <string name="tempo_presto">Presto</string>
+    <string name="tempo_prestissimo">Prestissimo</string>
     <string name="slower">Slower (−5 BPM)</string>
     <string name="faster">Faster (+5 BPM)</string>
     <string name="home">Home</string>
 
     <!-- Score report -->
     <string name="score_report">Score report</string>
-    <string name="tempo_chip">120 BPM</string>
     <string name="grade">B</string>
     <string name="accuracy">75%</string>
     <string name="notes_correct_value">12</string>
@@ -95,20 +122,21 @@
     <string name="missed">Missed</string>
     <string name="hit_count">12</string>
     <string name="missed_count">4</string>
-    <string name="insight"><![CDATA[Your misses landed on the <b>e and &amp; of beat 2</b> and the <b>&amp; and a of beat 4</b>. Try a few runs at 110 BPM, then build back up to 120.]]></string>
+    <string name="insight"><![CDATA[Your misses landed on the <b>e and &amp; of beat 2</b> and the <b>&amp; and a of beat 4</b>. Try a few runs at %1$d BPM, then build back up to %2$d.]]></string>
     <string name="retry">Retry</string>
 
     <!-- Profile -->
     <string name="back_practice">Practice</string>
     <string name="your_profile">Your profile</string>
-    <string name="six_stars">6 stars</string>
+    <plurals name="stars_count">
+        <item quantity="one">%d star</item>
+        <item quantity="other">%d stars</item>
+    </plurals>
     <string name="stats">Stats</string>
     <string name="stars">Stars</string>
-    <string name="stars_fraction">6 / 27</string>
+    <string name="stars_fraction">%1$d / %2$d</string>
     <string name="top_speed">Top speed</string>
-    <string name="top_speed_value">120 BPM</string>
     <string name="strength">Strength</string>
-    <string name="strength_value">Downpicking</string>
     <string name="account">Account</string>
     <string name="edit">Edit</string>
     <string name="reset">Reset</string>

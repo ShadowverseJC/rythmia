@@ -123,6 +123,10 @@
                             android:autofillHints="username"
                             android:hint="@string/hint_username"
                             android:inputType="text" />
+
+                        <TextView
+                            android:id="@+id/username_error"
+                            style="@style/Text.FieldError" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -147,6 +151,10 @@
                             android:autofillHints="emailAddress"
                             android:hint="@string/hint_email"
                             android:inputType="textEmailAddress" />
+
+                        <TextView
+                            android:id="@+id/email_error"
+                            style="@style/Text.FieldError" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -181,6 +189,10 @@
                         android:scaleType="center"
                         android:src="@drawable/ic_eye" />
                 </FrameLayout>
+
+                <TextView
+                    android:id="@+id/password_error"
+                    style="@style/Text.FieldError" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/create_account_button"

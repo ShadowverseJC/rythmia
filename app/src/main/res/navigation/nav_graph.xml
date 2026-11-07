@@ -40,6 +40,12 @@
         <action
             android:id="@+id/action_dashboard_to_profile"
             app:destination="@id/profileFragment" />
+        <!-- The saved login points at an account that no longer exists -->
+        <action
+            android:id="@+id/action_dashboard_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment

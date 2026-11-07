@@ -51,9 +51,10 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/tempo_chip"
                 style="@style/Chip.Neutral"
                 android:layout_marginTop="8dp"
-                android:text="@string/tempo_chip" />
+                tools:text="120 BPM" />
 
             <!-- Result card -->
             <LinearLayout
@@ -325,10 +326,11 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tempo_value"
                                 style="@style/Text.StatValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/bpm_value" />
+                                tools:text="120" />
 
                             <TextView
                                 style="@style/Text"

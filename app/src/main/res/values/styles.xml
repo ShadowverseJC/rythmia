@@ -201,6 +201,19 @@
         <item name="android:textColor">@color/text_primary</item>
     </style>
 
+    <!-- A field's validation message, shown under it in place of TextInputLayout so the custom
+         inputs keep their look. TalkBack reads it out when it appears. -->
+    <style name="Text.FieldError" parent="Text.BodySmall">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/danger_text</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:accessibilityLiveRegion">polite</item>
+    </style>
+
     <!-- Landscape sign-in / sign-up subtitle: dropped on short screens so the form fits
          without scrolling (shown again in values-h420dp) -->
     <style name="Text.BodySmall.AuthSubtitle">

@@ -7,8 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.rythemia.data.Session;
 import com.example.rythemia.databinding.ActivityMainBinding;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,5 +35,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return WindowInsetsCompat.CONSUMED;
         });
+
+        // Someone still logged in from last time goes straight to the dashboard. The graph is
+        // set here rather than in the layout so the start can depend on the session; after a
+        // rotation the nav controller restores its own back stack instead.
+        NavHostFragment host = (NavHostFragment) Objects.requireNonNull(
+                getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment));
+        NavController nav = host.getNavController();
+        NavGraph graph = nav.getNavInflater().inflate(R.navigation.nav_graph);
+        graph.setStartDestination(new Session(this).isLoggedIn()
+                ? R.id.dashboardFragment : R.id.loginFragment);
+        nav.setGraph(graph);
     }
 }

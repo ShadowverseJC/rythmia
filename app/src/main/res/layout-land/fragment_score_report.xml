@@ -62,9 +62,10 @@
                             android:text="@string/technique_alternate_picking" />
 
                         <TextView
+                            android:id="@+id/tempo_chip"
                             style="@style/Chip.Neutral"
                             android:layout_marginStart="6dp"
-                            android:text="@string/tempo_chip" />
+                            tools:text="120 BPM" />
                     </LinearLayout>
 
                     <!-- Result card: fills the column above the actions -->
@@ -420,10 +421,11 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tempo_value"
                                 style="@style/Text.StatTile"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/bpm_value" />
+                                tools:text="120" />
 
                             <TextView
                                 style="@style/Text"
