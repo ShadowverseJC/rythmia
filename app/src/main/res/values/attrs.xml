@@ -8,5 +8,11 @@
         </attr>
         <!-- Comma-separated 0-based note indices (0..15) that were missed, result mode only -->
         <attr name="missedNotes" format="string" />
+        <!-- stacked draws beats 1–2 above beats 3–4; singleRow draws all four beats on one
+             staff and scales the whole staff down when the view is too narrow -->
+        <attr name="staffLayout" format="enum">
+            <enum name="stacked" value="0" />
+            <enum name="singleRow" value="1" />
+        </attr>
     </declare-styleable>
 </resources>

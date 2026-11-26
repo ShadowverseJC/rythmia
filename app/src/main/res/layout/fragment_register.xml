@@ -83,6 +83,10 @@
                 android:inputType="text" />
 
             <TextView
+                android:id="@+id/username_error"
+                style="@style/Text.FieldError" />
+
+            <TextView
                 style="@style/Text.Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -99,6 +103,10 @@
                 android:autofillHints="emailAddress"
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/email_error"
+                style="@style/Text.FieldError" />
 
             <TextView
                 style="@style/Text.Label"
@@ -132,6 +140,10 @@
                     android:scaleType="center"
                     android:src="@drawable/ic_eye" />
             </FrameLayout>
+
+            <TextView
+                android:id="@+id/password_error"
+                style="@style/Text.FieldError" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/create_account_button"

@@ -83,14 +83,16 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/rank_chip"
                         style="@style/Chip.Rank"
-                        android:text="@string/rank_value"
+                        tools:text="Beginner-Intermediate"
                         app:drawableStartCompat="@drawable/ic_medal_chip" />
 
                     <TextView
+                        android:id="@+id/stars_chip"
                         style="@style/Chip.Stars"
                         android:layout_marginStart="8dp"
-                        android:text="@string/six_stars"
+                        tools:text="6 stars"
                         app:drawableStartCompat="@drawable/ic_star_chip" />
                 </LinearLayout>
             </LinearLayout>
@@ -103,7 +105,7 @@
                 android:layout_marginTop="24dp"
                 android:text="@string/stats" />
 
-            <!-- The second tile in each row stretches to the first tile's height -->
+            <!-- Every tile in a row fills its height, so the row grows to the tallest one -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,18 +115,18 @@
 
                 <include
                     android:id="@+id/stat_rank"
-                    layout="@layout/view_stat_tile" />
-
-                <Space
-                    android:layout_width="12dp"
-                    android:layout_height="0dp" />
+                    layout="@layout/view_stat_tile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <include
                     android:id="@+id/stat_stars"
                     layout="@layout/view_stat_tile"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -136,18 +138,18 @@
 
                 <include
                     android:id="@+id/stat_speed"
-                    layout="@layout/view_stat_tile" />
-
-                <Space
-                    android:layout_width="12dp"
-                    android:layout_height="0dp" />
+                    layout="@layout/view_stat_tile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <include
                     android:id="@+id/stat_strength"
                     layout="@layout/view_stat_tile"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp" />
             </LinearLayout>
 
             <!-- Account -->
@@ -203,11 +205,12 @@
                             android:text="@string/field_username" />
 
                         <TextView
+                            android:id="@+id/account_username"
                             style="@style/Text.Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/placeholder_username"
+                            tools:text="quack_sabbath"
                             android:textColor="@color/text_primary" />
                     </LinearLayout>
 
@@ -245,11 +248,12 @@
                             android:text="@string/field_email" />
 
                         <TextView
+                            android:id="@+id/account_email"
                             style="@style/Text.Body"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/placeholder_email"
+                            tools:text="duck@rock.com"
                             android:textColor="@color/text_primary" />
                     </LinearLayout>
 
@@ -292,7 +296,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:letterSpacing="0.15"
-                            android:text="@string/placeholder_password_mask"
+                            android:text="@string/password_mask"
                             android:textColor="@color/text_primary" />
                     </LinearLayout>
 

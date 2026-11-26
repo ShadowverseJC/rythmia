@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Landscape lesson card actions. Below 760dp wide the card is too narrow for a 16sp
+         "Bookmark" beside its icon, so the label, padding and icon gap tighten. -->
+    <dimen name="lesson_card_action_text_size">14sp</dimen>
+    <dimen name="lesson_card_action_padding">6dp</dimen>
+    <dimen name="lesson_card_action_icon_padding">4dp</dimen>
+
+    <!-- Landscape sign-in / sign-up card. These compact values fit the form on a 360dp-tall
+         screen without scrolling; values-h420dp restores the design sizes on taller screens. -->
+    <dimen name="auth_card_padding_vertical">14dp</dimen>
+    <dimen name="auth_field_gap">10dp</dimen>
+    <dimen name="auth_input_height">44dp</dimen>
+    <dimen name="auth_button_height">44dp</dimen>
+    <dimen name="auth_footer_gap">4dp</dimen>
+</resources>

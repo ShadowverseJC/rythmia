@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- bg_bpm_ring at the 92dp landscape dial size -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/bg_sunken" />
+    <stroke
+        android:width="2.226dp"
+        android:color="@color/accent_primary" />
+</shape>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Header surface with a 1dp divider on its end edge -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <color android:color="@color/border_default" />
+    </item>
+    <item android:end="1dp">
+        <color android:color="@color/bg_header" />
+    </item>
+</layer-list>
